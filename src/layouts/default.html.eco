@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= @document.title %> | My Website</title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css", "/styles/bootstrap.css"]).toHTML() %>
+  	<%- @getBlock("scripts").add(["/scripts/vendor/jquery.js","/scripts/script.js", "/scripts/vendor/bootstrap.js"]).toHTML() %>
+</head>
+<body>
+  <h1><%= @document.title %></h1>
+  <%- @content %>
+</body>
+</html>
