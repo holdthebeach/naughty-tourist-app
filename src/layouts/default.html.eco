@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= @document.title %> | My Website</title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css", "/styles/bootstrap.css"]).toHTML() %>
+  	<%- @getBlock("scripts").add(["/scripts/vendor/jquery.js","/scripts/script.js", "/scripts/vendor/bootstrap.js", "/scripts/vendor/tabletop.js"]).toHTML() %>
+</head>
+<body>
+	<div id="container" class="row">
+		<header class="col-md-12">
+	  	<h1 class="logo col-md-4 col-md-offset-4"><%= @document.title %></h1>
+	  </header>
+	  <%- @content %>
+	</div>
+</body>
+</html>
